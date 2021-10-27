@@ -24,8 +24,18 @@ class Window(QMainWindow):
         filemenu.addSeparator()
         filemenu.addAction(quit)
 
+        open.triggered.connect(self.doOpen)
+        quit.triggered.connect(self.doClose)
 
         self.show()
+
+        ##------------------------
+
+    def doOpen(self):
+        print("Open data")
+
+    def doClose(self):
+        exit(0)
 
 app = QApplication([])
 fenster = Window()

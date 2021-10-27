@@ -14,7 +14,7 @@ class Window(QMainWindow):
         #Widgets in layout hinzufügen
 
         center = QWidget()
-        center.setLayout(layout)
+        #center.setLayout(layout)
 
         self.setCentralWidget(center)
         self.show()
