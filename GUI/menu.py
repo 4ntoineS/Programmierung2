@@ -13,6 +13,17 @@ class Window(QMainWindow):
         editmenu = menubar.addMenu("Edit")
         viewmenu = menubar.addMenu("View")
 
+        open = QAction("Open", self)
+        save = QAction("Save", self)
+        quit = QAction("Exit", self)
+
+        quit.setMenuRole(QAction.QuitRole)
+
+        filemenu.addAction(open)
+        filemenu.addAction(save)
+        filemenu.addSeparator()
+        filemenu.addAction(quit)
+
 
         self.show()
 
