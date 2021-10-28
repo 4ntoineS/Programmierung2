@@ -40,7 +40,7 @@ class Window(QMainWindow):
         print("Line edit has value: " + self.name.text())
 
     def Knopf2(self):
-        self.name.setText("Hello World")
+        self.name.setText("Hello")
 
     def MycheckBox(self, state):
         if state == Qt.CheckState.Checked:       
