@@ -64,14 +64,14 @@ class Fenster(QMainWindow):
             QMessageBox.information(self, "Antwort", "Super!")
 
         else:
-            QMessageBox.critical(self, "Antwort", "C'est con hein?")
+            QMessageBox.critical(self, "Antwort", "Schade")
             self.close()
 
     def button6_clicked(self):
         answer = QMessageBox.question(self, "Question", "musst du studieren?", QMessageBox.Yes, QMessageBox.No)
 
         if answer == QMessageBox.Yes:
-            QMessageBox.about(self, "Antwort", "Warum bist du da dann?")
+            QMessageBox.about(self, "Antwort", "Warum bist du dann da?")
             self.close()
 
         else:
