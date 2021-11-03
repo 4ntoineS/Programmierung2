@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 
 class Fenster(QMainWindow):
@@ -17,6 +18,10 @@ class Fenster(QMainWindow):
         buttons.append(QPushButton("QMessage Box : Critical"))
         buttons.append(QPushButton("QMessage Box : ça geht?"))
         buttons.append(QPushButton("QMessage Box : Studium"))
+        buttons.append(QPushButton("Open dialog"))
+        buttons.append(QPushButton("Open multiple dialogs"))
+        buttons.append(QPushButton("Save dialog"))
+        buttons.append(QPushButton("10"))
 
         buttons[0].clicked.connect(self.button1_clicked)
         buttons[1].clicked.connect(self.button2_clicked)
@@ -24,6 +29,10 @@ class Fenster(QMainWindow):
         buttons[3].clicked.connect(self.button4_clicked)
         buttons[4].clicked.connect(self.button5_clicked)
         buttons[5].clicked.connect(self.button6_clicked)
+        buttons[6].clicked.connect(self.button7_clicked)
+        buttons[7].clicked.connect(self.button8_clicked)
+        buttons[8].clicked.connect(self.button9_clicked)
+        buttons[9].clicked.connect(self.button10_clicked)
 
 
         style = """QPushButton {font-size: 16px; background-color: #00AA00; }
@@ -77,6 +86,27 @@ class Fenster(QMainWindow):
         else:
             QMessageBox.critical(self, "Antwort", "Doch")
             self.close()
+
+    def button7_clicked(self):
+        dateifilter = "Textdatei (*.txt *.ttt);; Python File (*.py)"
+        path = QStandardPaths.standardLocations(0)
+
+        filename, filter = QFileDialog.getOpenFileName(self, "Datei öffnen", path, dateifilter)
+
+        QMessageBox.information(self, "File", f"<h1>{filename}</h1><h2>{filter}</h2>")
+    
+    def button8_clicked(self):
+        filenamen, filter = QFileDialog.getOpenFileNames(self, "Datei öffnen", "", "Python File (*.py)")
+
+        QMessageBox.information(self, "File", f"<h1>{filenamen}</h1><h2>{filter}</h2>")
+    
+
+    def button9_clicked(self):
+        filename, filter = QFileDialog.getSaveFileName(self, "Save", "", "Python File (*.py)")
+        print(filename, filter)
+    
+    def button10_clicked(self):
+        QMessageBox.information(self, "Information", "Text")
 
 
 
