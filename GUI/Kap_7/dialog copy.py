@@ -9,38 +9,31 @@ class Fenster(QMainWindow):
         self.setWindowTitle("Dialog Bsp")
         layout = QVBoxLayout()
 
-        button1 = QPushButton("QMessage Box : Information")
-        button2 = QPushButton("QMessage Box : about")
-        button3 = QPushButton("QMessage Box : Warning")
-        button4 = QPushButton("QMessage Box : Critical")
-        button5 = QPushButton("QMessage Box : ça geht?")
-        button6 = QPushButton("QMessage Box : Studium")
+        buttons = []
 
-        button1.clicked.connect(self.button1_clicked)
-        button2.clicked.connect(self.button2_clicked)
-        button3.clicked.connect(self.button3_clicked)
-        button4.clicked.connect(self.button4_clicked)
-        button5.clicked.connect(self.button5_clicked)
-        button6.clicked.connect(self.button6_clicked)
+        buttons.append(QPushButton("QMessage Box : Information"))
+        buttons.append(QPushButton("QMessage Box : about"))
+        buttons.append(QPushButton("QMessage Box : Warning"))
+        buttons.append(QPushButton("QMessage Box : Critical"))
+        buttons.append(QPushButton("QMessage Box : ça geht?"))
+        buttons.append(QPushButton("QMessage Box : Studium"))
+
+        buttons[0].clicked.connect(self.button1_clicked)
+        buttons[1].clicked.connect(self.button2_clicked)
+        buttons[2].clicked.connect(self.button3_clicked)
+        buttons[3].clicked.connect(self.button4_clicked)
+        buttons[4].clicked.connect(self.button5_clicked)
+        buttons[5].clicked.connect(self.button6_clicked)
 
 
         style = """QPushButton {font-size: 16px; background-color: #00AA00; }
                     QPushButton:pressed {font-size: 16px; background-color: #AA0000; }"""
 
-        button1.setStyleSheet(style)
-        button2.setStyleSheet(style)
-        button3.setStyleSheet(style)
-        button4.setStyleSheet(style)
-        button5.setStyleSheet(style)
-        button6.setStyleSheet(style)
+        for button in buttons:
+        
+            button.setStyleSheet(style)
+            layout.addWidget(button)
 
-
-        layout.addWidget(button1)
-        layout.addWidget(button2)
-        layout.addWidget(button3)
-        layout.addWidget(button4)
-        layout.addWidget(button5)
-        layout.addWidget(button6)
 
 
         center = QWidget()
@@ -74,11 +67,11 @@ class Fenster(QMainWindow):
             QMessageBox.critical(self, "Antwort", "C'est con hein?")
             self.close()
 
-    def button5_clicked(self):
+    def button6_clicked(self):
         answer = QMessageBox.question(self, "Question", "musst du studieren?", QMessageBox.Yes, QMessageBox.No)
 
         if answer == QMessageBox.Yes:
-            QMessageBox.information(self, "Antwort", "Warum bist du da dann?")
+            QMessageBox.about(self, "Antwort", "Warum bist du da dann?")
             self.close()
 
         else:
