@@ -13,7 +13,7 @@ class Dialog(QDialog):
         layout.addWidget(button)
         
         self.setLayout(layout)
-        button.clicked.connect(self.button13_clicked00)
+        button.clicked.connect(self.button13_clicked)
 
 
 class Fenster(QMainWindow):
