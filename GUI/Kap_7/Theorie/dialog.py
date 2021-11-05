@@ -74,7 +74,7 @@ class Fenster(QMainWindow):
             QMessageBox.critical(self, "Antwort", "C'est con hein?")
             self.close()
 
-    def button5_clicked(self):
+    def button6_clicked(self):
         answer = QMessageBox.question(self, "Question", "musst du studieren?", QMessageBox.Yes, QMessageBox.No)
 
         if answer == QMessageBox.Yes:
