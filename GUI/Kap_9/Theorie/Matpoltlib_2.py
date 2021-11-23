@@ -8,7 +8,7 @@ class Window(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        layout = QVBoxLayout
+        layout = QVBoxLayout()
 
         figure = plt.figure(figsize=(16,9))
         self.canvas = FigureCanavas(figure)
@@ -30,21 +30,23 @@ class Window(QMainWindow):
         self.setCentralWidget(center)
         self.show()
 
-        def plot1(self):
-            plt.clf()   ## clear existing figure
-            x = np.linspace(-np.pi, np.pi, 20)
-            y = np.sin(x)
-            plt.plot(x, y, "ro-")
-            plt.axis("equal")
+    def plot1(self):
+        plt.clf()   ## clear existing figure
+        x = np.linspace(-np.pi, np.pi, 20)
+        y = np.sin(x)
+        plt.plot(x, y, "ro-")
+        plt.axis("equal")
 
-        def plot2(self):
-            plt.clf()
-            x = np.linspace(-np.pi, np.pi, 20)
-            y = np.cos(x)
-            plt.plot(x, y, "ko-")
-            plt.axis("equal")
+        self.canvas.draw()
 
-            self.canvas.draw()
+    def plot2(self):
+        plt.clf()
+        x = np.linspace(-np.pi, np.pi, 20)
+        y = np.cos(x)
+        plt.plot(x, y, "ko-")
+        plt.axis("equal")
+
+        self.canvas.draw()
 
 
 app = QApplication([])
