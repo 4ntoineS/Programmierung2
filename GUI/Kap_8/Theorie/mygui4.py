@@ -13,13 +13,13 @@ class Umrechnen(QMainWindow):
     ## -------------------------------------------------------------------------------------------------------    
 
     def createConnects(self):
-        #self.umrechnenbutton.clicked.connect(self.umrechnen)
-        self.euroLineEdit.textChanged.connect(self.euroEdit)
+        self.umrechnenbutton.clicked.connect(self.umrechnen)
+        #self.euroLineEdit.textChanged.connect(self.euroEdit)
 
     ## -------------------------------------------------------------------------------------------------------    
 
-    def euroEdit(self, text):
-        self.umrechnen()
+    #def euroEdit(self, text):
+    #    self.umrechnen()
 
     def umrechnen(self):
         euro = self.euroLineEdit.text()
