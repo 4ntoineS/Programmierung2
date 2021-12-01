@@ -1,4 +1,3 @@
-#from shapely import geometry
 from shapely.geometry import Point
 import shapely.wkt
 import matplotlib.pyplot as plt
@@ -12,7 +11,7 @@ aiportSion = Point([46.22289784931113, 7.337911311639002])
 FHNW2 = shapely.wkt.loads("POINT (47.5394361 7.6140785)")
 #print(FHNW2.wkt)
 
-file = open("C:/Users/antoi/Desktop/Programmierung2/Projektion/20211201_/schweiz.wkt")
+file = open("C:/Users/antoi/Desktop/Programmierung2/Projektion/20211201_/Theorie/schweiz.wkt")
 schweiz_zeichenkette = file.read()
 
 

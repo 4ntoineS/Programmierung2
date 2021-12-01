@@ -27,5 +27,5 @@ s2 = kreuz.intersection(quadrat)
 
 s3 = kreuz.symmetric_difference(quadrat)
 print(s3.wkt)
-
 #plt.plot()
+
