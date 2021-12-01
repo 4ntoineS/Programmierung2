@@ -3,7 +3,7 @@ from pyproj import Transformer
 t = Transformer.from_crs("EPSG:2056", "EPSG:4326")
 
 
-file = open("C:/Users/antoi/Desktop/Programmierung2/Projektion/20211201_/Theorie/PLZO_CSV_LV95.csv", encoding="utf-8")
+file = open("C:/Users/antoi/Desktop/Programmierung2/Projektion/20211201_/PLZO_CSV_LV95.csv", encoding="utf-8")
 
 next(file)      ##erste Zeile des files wird ignoriert
 
